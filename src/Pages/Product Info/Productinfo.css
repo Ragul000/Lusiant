@@ -1,0 +1,58 @@
+/* Modal Background */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(17, 24, 39, 0.5); /* bg-gray-900 with opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50; /* Ensures it's above other elements */
+  }
+  
+  /* Modal Container */
+  .modal-container {
+    background-color: #000; /* Black background */
+    color: white; /* White text */
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* Modal Title */
+  .modal-container h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Modal Content */
+  .modal-container p {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+  }
+  
+  /* Image Styling */
+  .modal-container img {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
+  }
+  
+  /* Close Button */
+  .modal-close-btn {
+    margin-top: 16px;
+    padding: 10px 16px;
+    background-color: #dc2626; /* Red */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  .modal-close-btn:hover {
+    background-color: #b91c1c; /* Darker Red */
+  }
+  
