@@ -12,16 +12,17 @@ body, html {
 /* Main container */
 .p-4 {
   width: 90vw;  /* Adjusted width */
-  max-width: 1500px; /* Keeps it from becoming too wide */
-  height: 80vh;
+  max-width: 1200px; /* Keeps it from becoming too wide */
+  height: 100%; /* Slightly increased height for better fit */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between; /* Better spacing between table & pagination */
   align-items: center;
   background: white;
-  padding: 20px;
+  padding: 25px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 /* Table wrapper */
@@ -29,13 +30,12 @@ body, html {
   width: 100%;
   flex-grow: 1;
   overflow-x: auto;
+  padding-bottom: 10px; /* Ensures some spacing below the table */
 }
 
 /* Table styling */
 table {
   width: 100%;
-  height: auto;  /* Ensures better responsiveness */
-  margin: auto;
   border-collapse: collapse;
 }
 
@@ -44,9 +44,15 @@ th, td {
   text-align: center;
   color: black;
   font-size: 16px;
-  padding: 10px;
- 
-  height:8vh;
+  padding: 12px 15px; /* Increased padding for better spacing */
+  height: 8vh;
+  border-bottom: 1px solid #ddd; /* Adds a subtle separation */
+}
+
+/* Table header styling */
+th {
+  background-color: #f0f0f0;
+  font-weight: bold;
 }
 
 /* Table row hover effect */
@@ -54,13 +60,14 @@ tbody tr:hover {
   background-color: #f1f1f1;
 }
 
-/* Flexbox container for pagination */
+/* Pagination container */
 .flex {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;  /* Ensures proper spacing */
-  margin-top: 10px;
+  gap: 10px;
+  width: 100%;
+  padding-top: 10px; /* Adds spacing between table and pagination */
 }
 
 /* Pagination text */
@@ -72,20 +79,68 @@ tbody tr:hover {
 
 /* Pagination buttons */
 button {
-  padding: 8px 12px;
+  padding: 8px 14px;
   background-color: #f35151;
+  color: white;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  
   transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #d6d6d6;
+  background-color: #d62f2f;
 }
 
 button:disabled {
   background-color: #c0c0c0;
   cursor: not-allowed;
+}
+
+
+.search-filter-container {
+  display: flex;
+  gap: 12px;
+  margin-left: 800px;
+  padding: 12px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+
+}
+
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 8px 12px;
+  gap: 8px;
+}
+
+.input-icon {
+  color: #eb0000;
+}
+
+.input-field {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  background: transparent;
+}
+
+select.input-field {
+  cursor: pointer;
+}
+
+.input-field::placeholder {
+  color: #aaa;
+}
+
+.input-wrapper:focus-within {
+  border-color: #f35151;
+  box-shadow: 0 0 4px rgba(243, 81, 81, 0.5);
 }
