@@ -29,15 +29,17 @@ const Products = () => {
       });
   }, []);
 
-  if (loading) return <div className="text-center p-4">Loading...</div>;
-  if (error) return <div className="text-center p-4 text-red-500">Error: {error}</div>;
+  if (loading) return <div className="text-center">Loading...</div>;
+  if (error) return <div className="text-center">Error: {error}</div>;
 
   const filteredProducts = products.filter((item) =>
-    Object.values(item).some((value) =>
-      value.toString().toLowerCase().includes(searchQuery.toLowerCase())
-    ) &&
+    (item.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.brand?.toLowerCase().includes(searchQuery.toLowerCase())) &&
     (categoryFilter ? item.category === categoryFilter : true)
   );
+
+
+  
 
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
   const paginatedData = filteredProducts.slice(

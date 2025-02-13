@@ -45,13 +45,13 @@ th, td {
   color: black;
   font-size: 16px;
   padding: 12px 15px; /* Increased padding for better spacing */
-  height: 8vh;
+  height: 7vh;
   border-bottom: 1px solid #ddd; /* Adds a subtle separation */
 }
 
 /* Table header styling */
 th {
-  background-color: #f0f0f0;
+  background-color: rgb(228, 223, 223);
   font-weight: bold;
 }
 
